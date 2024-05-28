@@ -21,8 +21,7 @@ CORS(app)
 
 @app.route("/")
 def serve():
-    return ""
-    # return send_from_directory(app.static_folder, 'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route("/input", methods=['POST'])
