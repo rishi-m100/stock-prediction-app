@@ -24,7 +24,7 @@ def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 model = load_model('models/stock_predictor.h5')
-scaler = joblib.load('/Users/rishimulchandani/stock-prediction-ml-app/backend/models/scaler.pkl')
+scaler = joblib.load('models/scaler.pkl')
 
 @app.route("/input", methods=['POST'])
 def input():
