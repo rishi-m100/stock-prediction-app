@@ -60,7 +60,7 @@ function App() {
   const [val, setVal] = useState([]);
   const [plotImage, setPlotImage] = useState(null);
   const [selectedStock, setSelectedStock] = useState(null);
-  const [daysAhead, setDaysAhead] = useState();
+  const [daysAhead, setDaysAhead] = useState(""); 
 
   useEffect(() => {
     fetch("/")
@@ -91,7 +91,7 @@ function App() {
           days: daysAhead,
         })
         .then((res) => {
-          // console.log(res.data.message);
+          console.log(res.data.message);
           setVal(res.data.predictions);
           setPlotImage(res.data.plot);
         });

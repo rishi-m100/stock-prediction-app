@@ -23,6 +23,8 @@ CORS(app)
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
+model = load_model('models/stock_predictor.h5')
+scaler = joblib.load('/Users/rishimulchandani/stock-prediction-ml-app/backend/models/scaler.pkl')
 
 @app.route("/input", methods=['POST'])
 def input():
@@ -33,8 +35,7 @@ def input():
     if not stock_symbol:
         return jsonify({"message": "No stock symbol provided"}), 400
 
-    model = load_model('models/stock_predictor.h5')
-    scaler = joblib.load('/Users/rishimulchandani/stock-prediction-ml-app/backend/models/scaler.pkl')
+    
 
     start_date = '2012-01-01'
     end_date = datetime.now().strftime('%Y-%m-%d')
