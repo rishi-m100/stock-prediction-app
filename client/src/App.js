@@ -62,14 +62,14 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [daysAhead, setDaysAhead] = useState();
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:5000")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setData(data.message);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setData(data.message);
+      });
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -86,7 +86,7 @@ function App() {
       // });
 
       axios
-        .post("http://127.0.0.1:5000/input", {
+        .post("/input", {
           stock: selectedStock.value,
           days: daysAhead,
         })
