@@ -3,3 +3,10 @@ tensorflow
 flask_cors
 gunicorn
 datetime
+pandas
+matplotlib
+joblib
+numpy
+yfinance
+io
+base64
