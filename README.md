@@ -6,6 +6,8 @@ This project implements a stock price prediction model using machine learning, s
 
 The project is deployed and accessible at: [Stock Prediction App](https://stock-prediction-app-y9vw.onrender.com/)
 
+(Please be patient - the free hosting site takes up to 2 minutes to load)
+
 ## Features
 
 - Predict future stock prices based on historical data.
